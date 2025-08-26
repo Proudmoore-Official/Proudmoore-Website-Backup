@@ -7,7 +7,7 @@ const { t } = useI18n();
 <template>
     <section
         id="timeline"
-        class="pt-[160px] flex flex-col items-center justify-center"
+        class="pt-[100px] flex flex-col items-center justify-center [@media(max-width:1450px)]:px-8"
     >
         <!-- Texte + warning visible uniquement <1450px -->
         <div class="block [@media(min-width:1450px)]:hidden text-center">
@@ -25,12 +25,16 @@ const { t } = useI18n();
         </div>
 
         <!-- Image visible uniquement >=1450px -->
-        <div class="hidden [@media(min-width:1450px)]:block w-full overflow-x-auto">
-        <img
-            src="/webp/25-timeline.svg"
-            alt="Timeline Image"
-            class="h-[600px] w-auto"
-        />
+        <div class="hidden [@media(min-width:1450px)]:flex w-full overflow-x-auto [@media(min-width:1450px)]:flex-col [@media(min-width:1450px)]:items-center [@media(min-width:1450px)]:justify-center">
+            <h3 class="mb-[4rem] font-marcellus timeline-title">
+                <!-- {{ t('timeline.mainTitle') }} -->
+                Timeline
+            </h3>
+            <img
+                src="/webp/25-timeline.svg"
+                alt="Timeline Image"
+                class="h-auto w-full"
+            />
         </div>
     </section>
 </template>
